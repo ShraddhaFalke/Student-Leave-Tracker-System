@@ -1,13 +1,15 @@
-<?php include '../includes/db_connection.php'; ?>
+<?php
+// session_start();
+// include '../includes/db_connection.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Student Login</title>
+    <title>HOD Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <style>
-        /* Reset */
         body, html {
             margin: 0;
             padding: 0;
@@ -16,7 +18,6 @@
             overflow-x: hidden;
         }
 
-        /* Background image */
         .background {
             position: fixed;
             top: 0;
@@ -28,7 +29,6 @@
             z-index: -2;
         }
 
-        /* Blurred overlay */
         .overlay {
             position: fixed;
             top: 0;
@@ -40,7 +40,6 @@
             z-index: -1;
         }
 
-        /* Centered container */
         body {
             display: flex;
             justify-content: center;
@@ -115,69 +114,44 @@
             background-color: #4b0082;
         }
 
-        button.btn-secondary {
-            background-color: transparent;
-            color: #6a0dad;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 12px 0;
-            border: 2px solid #6a0dad;
-            border-radius: 10px;
-            width: 30%;
-            cursor: pointer;
-            margin-top: 14px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            letter-spacing: 0.8px;
-        }
-
-        button.btn-secondary:hover {
-            background-color: #6a0dad;
-            color: #fff;
-        }
-
-        .btn-link {
-            display: block;
-            text-align: center;
+        .btn-secondary {
+            display: inline-block;
             margin-top: 20px;
-            color: #6a0dad;
+            padding: 12px 20px;
+            background-color: #999;
+            color: #fff;
             font-weight: 600;
-            text-decoration: underline;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease;
         }
 
-        .btn-link:hover {
-            color: #4b0082;
+        .btn-secondary:hover {
+            background-color: #666;
             text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-<!-- Background and overlay layers -->
+<!-- Background image and overlay -->
 <div class="background"></div>
 <div class="overlay"></div>
 
 <div class="login-container">
-    <h2>Student Login</h2>
-    <form action="login_process.php" method="POST" autocomplete="off">
-        <label for="student_id">Student ID</label>
-        <input type="text" id="student_id" name="student_id" required />
+    <h2>HOD Login</h2>
+    <form action="hod_login_process.php" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required />
 
         <button type="submit" class="btn-primary">Login</button>
-
-        
-
-        <a href="register.php" class="btn-link">Don't have an account? Register</a>
-
-        <button type="button" class="btn-secondary" onclick="history.back()">← Back</button>
+        <a href="../index.html" class="btn-secondary">Back</a>
     </form>
 </div>
 
 </body>
 </html>
-
