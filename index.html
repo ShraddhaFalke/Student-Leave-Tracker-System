@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Leave Tracker System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Background image layer */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url('images/college.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        /* Blurred overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            backdrop-filter: blur(5px);
+            background-color: rgba(50, 0, 70, 0.65);
+            z-index: -1;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .login-card {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 1rem;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
+            padding: 30px 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .login-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #6f42c1;
+            object-fit: cover;
+        }
+
+        .card-header {
+            background-color: #6f42c1;
+        }
+
+        .btn-purple {
+            background-color: #7e55cb;
+            border: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-purple:hover {
+            background-color: #59339d;
+        }
+
+        h1, h5, p, li {
+            color: #50358c;
+        }
+
+        .alert {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-left: 5px solid #6f42c1;
+        }
+
+        .footer-text {
+            color: #e0d6f5;
+            margin-top: 50px;
+            font-size: 0.95rem;
+        }
+
+        .instruction-card {
+            background-color: rgba(255, 255, 255, 0.93);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Image Layer -->
+<div class="background"></div>
+
+<!-- Blurred Overlay -->
+<div class="overlay"></div>
+
+<div class="container text-center pt-5">
+    <!-- Logo (optional) -->
+    <!-- <img src="images/logo.jpg" alt="Logo" class="logo mb-3"> -->
+
+    <h1 class="main-title mb-4">Student Leave Tracker System</h1>
+
+    <!-- About section -->
+    <div class="alert text-left">
+        <h5>About This System</h5>
+        <p>This online leave Tracker system allows students to easily apply for leave by submitting a leave application along with supporting documents. Faculty members can review and approve or reject leave requests, while HODs provide final approval. It ensures a transparent, organized, and paperless leave process within the college campus.</p>
+    </div>
+
+    <!-- Login cards -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-3 mb-4">
+            <div class="login-card">
+                <img src="images/students2.jpg" alt="Student Avatar" class="avatar">
+                <h5 class="text-dark">Student Login</h5>
+                <a href="students/login.php" class="btn btn-purple btn-block mt-3 p-2">Login as Student</a>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="login-card">
+                <img src="images/faculty1.jpg" alt="Faculty Avatar" class="avatar">
+                <h5 class="text-dark">Faculty Login</h5>
+                <a href="faculty/login.php" class="btn btn-purple btn-block mt-3 p-2">Login as Faculty</a>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="login-card">
+                <img src="images/hod1.jpg" alt="HOD Avatar" class="avatar">
+                <h5 class="text-dark">HOD Login</h5>
+                <a href="hod/login.php" class="btn btn-purple btn-block mt-3 p-2">Login as HOD</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Instructions -->
+    <div class="card instruction-card mt-5">
+        <div class="card-header text-white">
+            Quick Instructions
+        </div>
+        <div class="card-body text-left text-dark">
+            <ul>
+                <li><strong>Students:</strong> Login using your Roll Number and Password to apply for leave or check your leave history.</li>
+                <li><strong>Faculty:</strong> Review student leave requests and approve or reject them.</li>
+                <li><strong>HOD:</strong> Provide final approval or rejection for faculty-reviewed leave requests.</li>
+                <li>Supported leave types include: Casual Leave, Sick Leave, Academic Leave, and more.</li>
+                <li>Attach required supporting documents such as medical certificates or event invitations when necessary.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">© 2025 Leave Tracker System </p>
+    </footer>
+</div>
+
+</body>
+</html>
+
